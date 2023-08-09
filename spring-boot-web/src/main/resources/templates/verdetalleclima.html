@@ -5,8 +5,16 @@
 <title>Ver detalle del clima</title>
 </head>
 <body>
-<h1>Climaaaaaaaaaaaa</h1>
- <p>Nombre: <span th:text="${mensaje}"></span></p>
- <p>Nombre: <span th:text="${mensaje}"></span></p>
+<h2>Ubicación</h2>
+ <p>Provincia: <span th:text="${teamResponse.location.name}"></span></p>
+ <p>Distrito: <span th:text="${teamResponse.location.region}"></span></p>
+ <p>País: <span th:text="${teamResponse.location.country}"></span></p>
+ <p>Latitud: <span th:text="${teamResponse.location.lat}"></span></p>
+ <p>Longitud: <span th:text="${teamResponse.location.lon}"></span></p>
+<h2>Estado Actual</h2>
+<p>Última actualización: <span th:text="${teamResponse.current.last_updated}"></span></p>
+<p>Temperatura Celsius: <span th:text="${teamResponse.current.temp_c}"></span></p>
+<p>Temperatura Fahrenheit: <span th:text="${teamResponse.current.temp_f}"></span></p>
+<p>¿Es de día?: <span th:text="${teamResponse.current.is_day}"></span></p>
 </body>
 </html>

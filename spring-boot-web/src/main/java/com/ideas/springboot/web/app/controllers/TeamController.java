@@ -29,13 +29,12 @@ public class TeamController {
     @GetMapping("worldcup/teams")
     public String verdetalleclima(Map<String, Object> model) {
     	
-      var respuesta = this.teamService.findAll();
-      
-      String mensaje = "¡Hola desde el controlador!";
-      model.put("mensaje", mensaje);
-      
-      return "verdetalleclima";
-    }
+    TeamResponse respuesta = this.teamService.findAll();
+       
+       model.put("teamResponse", respuesta);
+        
+       return "verdetalleclima";
+     }
     
     
 }
