@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <title>Ver detalle del clima</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
 </head>
 <body>
+	<!--
 <h2>Ubicación</h2>
  <p>Provincia: <span th:text="${teamResponse.location.name}"></span></p>
  <p>Distrito: <span th:text="${teamResponse.location.region}"></span></p>
@@ -15,6 +17,8 @@
 <p>Última actualización: <span th:text="${teamResponse.current.last_updated}"></span></p>
 <p>Temperatura Celsius: <span th:text="${teamResponse.current.temp_c}"></span></p>
 <p>Temperatura Fahrenheit: <span th:text="${teamResponse.current.temp_f}"></span></p>
-<p>¿Es de día?: <span th:text="${teamResponse.current.is_day}"></span></p>
+-->
+<p>Region:<span th:text="${region}"></span></p>
+<h2>Resultados para la región: ${region}</h2>
 </body>
 </html>

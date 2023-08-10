@@ -12,8 +12,10 @@ import javax.swing.Spring;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 //@RestController
@@ -26,15 +28,31 @@ public class TeamController {
         this.teamService = teamService;
     }
 
-    @GetMapping("worldcup/teams")
+    @GetMapping("verdetalleclima")
     public String verdetalleclima(Map<String, Object> model) {
     	
-    TeamResponse respuesta = this.teamService.findAll();
-       
-       model.put("teamResponse", respuesta);
+    	TeamResponse respuesta = this.teamService.findAll();
         
-       return "verdetalleclima";
-     }
+       
+        model.put("teamResponse", respuesta);
+        
+        return "verdetalleclima";
+      }
+    
+    @GetMapping("buscarclima")
+    public String buscarclima(Map<String, Object> model) {
+
+        
+        return "buscarclima";
+      }
+    
+    @PostMapping("/buscarclima")
+    public String buscarclima(@RequestParam String region, Map<String, Object> model) {
+   //     List<Team> equiposEnRegion = teamService.buscarPorRegion(region);
+      //  model.put("equiposEnRegion", equiposEnRegion);
+    	model.put("region", region);
+        return "verdetalleclima";
+    }
     
     
 }

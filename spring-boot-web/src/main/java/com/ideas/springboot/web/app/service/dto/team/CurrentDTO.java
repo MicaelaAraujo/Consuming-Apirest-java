@@ -6,6 +6,7 @@ public class CurrentDTO {
 	    private double temp_c;
 	    private double temp_f;
 	    private int is_day;
+	    
 	    public long getLast_updated_epoch() {
 			return last_updated_epoch;
 		}
