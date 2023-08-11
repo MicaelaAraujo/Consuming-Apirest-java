@@ -3,27 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <title>Ver detalle del clima</title>
+<link rel="stylesheet" th:href="@{/css/detalleclima.css}" />
 </head>
 <body>
-	<!--
-<h2>Ubicación</h2>
- <p>Provincia: <span th:text="${teamResponse.location.name}"></span></p>
- <p>Distrito: <span th:text="${teamResponse.location.region}"></span></p>
- <p>País: <span th:text="${teamResponse.location.country}"></span></p>
- <p>Latitud: <span th:text="${teamResponse.location.lat}"></span></p>
- <p>Longitud: <span th:text="${teamResponse.location.lon}"></span></p>
-<h2>Estado Actual</h2>
-<p>Última actualización: <span th:text="${teamResponse.current.last_updated}"></span></p>
-<p>Temperatura Celsius: <span th:text="${teamResponse.current.temp_c}"></span></p>
-<p>Temperatura Fahrenheit: <span th:text="${teamResponse.current.temp_f}"></span></p>
--->
-
-<p>Name:<span th:text="${clima.location.name}"></span></p>
-<p>Region:<span th:text="${clima.location.region}"></span></p>
-<p>Country:<span th:text="${clima.location.country}"></span></p>
-
-<p>Last updated:<span th:text="${clima.current.last_updated_epoch}"></span></p>
-<p>temp c:<span th:text="${clima.current.temp_c}"></span></p>
-
+<div class="container">
+  <h2>Detalle del clima</h2>
+  <p>Fecha: <span th:text="${clima.current.last_updated}"></span></p>
+  <p>Pais: <span th:text="${clima.location.country}"></span></p>
+  <p>Country: <span th:text="${clima.location.name}"></span></p>
+  <p>Región: <span th:text="${clima.location.region}"></span></p>
+  <p>Temperatura: <span class="temperature" th:text="${clima.current.temp_c}"></span>°C</p>
+  <p>Temperatura Fahrenheit: <span class="temperature" th:text="${clima.current.temp_f}"></span>F</p>
+</div>
 </body>
 </html>
