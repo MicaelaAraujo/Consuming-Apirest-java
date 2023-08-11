@@ -16,16 +16,19 @@ public class TeamServiceImpl extends AbstractClient implements TeamService {
     public TeamServiceImpl(RestTemplate restTemplate) {
         super(restTemplate);
     }
+    
+    
     @Override
-    public TeamResponse findAll() {
+    public TeamResponse buscarClima(String region) {
         String uri = baseUrl;
+        uri = uri + region + "&aqi=no";
         HttpEntity<Void> requestEntity = new HttpEntity<>(null);
-        ResponseEntity<TeamResponse> response = restTemplate.exchange(
+        ResponseEntity<TeamResponse> respuesta = restTemplate.exchange(
                 uri, HttpMethod.GET, requestEntity , TeamResponse.class);
 
-        if (response.getStatusCode().is2xxSuccessful()) {
+        if (respuesta.getStatusCode().is2xxSuccessful()) {
         //    log.info("Successfully user creation: {}", response.getBody().getStatus());
-            return response.getBody();
+            return respuesta.getBody();
         }
         //log.error("Error in user creation - httpStatus was: {}", response.getStatusCode());
         throw new RuntimeException("Error");

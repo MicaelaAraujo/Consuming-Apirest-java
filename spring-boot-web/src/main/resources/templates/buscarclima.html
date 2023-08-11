@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>Hola spring!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  <title>Buscar por Región</title>
 </head>
 <body>
-<h1>Hola spriwwwwng!</h1>
-<h2>Buscar por Región</h2>
-   <form action="/buscarclima" method="post">
-    <div>
-        <label for="region">Región:</label>
-        <input type="text" id="region" name="region" />
+  <div class="container">
+    <div class="content">
+      <h1 class="h1">¡Bienvenidos!</h1>
+      <h2 class="h2">Buscar el clima por Región</h2>
+      <form action="/buscarclima" method="post">
+        <div>
+          <label for="region">Región:</label>
+          <input type="text" id="region" name="region" />
+        </div>
+        <div>
+          <button type="submit">Buscar</button>
+        </div>
+      </form>
     </div>
-    <div>
-        <button type="submit">Buscar</button>
-    </div>
-</form>
-
+  </div>
 </body>
 </html>

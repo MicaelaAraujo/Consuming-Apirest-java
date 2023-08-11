@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeamController {
 
     private final TeamService teamService;
-
     public TeamController(TeamService teamService) {
         this.teamService = teamService;
     }
@@ -31,28 +30,24 @@ public class TeamController {
     @GetMapping("verdetalleclima")
     public String verdetalleclima(Map<String, Object> model) {
     	
-    	TeamResponse respuesta = this.teamService.findAll();
-        
-       
-        model.put("teamResponse", respuesta);
-        
+      //  model.put("teamResponse", respuesta);
         return "verdetalleclima";
       }
     
     @GetMapping("buscarclima")
     public String buscarclima(Map<String, Object> model) {
-
-        
         return "buscarclima";
       }
     
     @PostMapping("/buscarclima")
     public String buscarclima(@RequestParam String region, Map<String, Object> model) {
+    	TeamResponse respuesta = this.teamService.buscarClima(region); 
    //     List<Team> equiposEnRegion = teamService.buscarPorRegion(region);
       //  model.put("equiposEnRegion", equiposEnRegion);
-    	model.put("region", region);
+    	model.put("clima", respuesta);
         return "verdetalleclima";
     }
+    
     
     
 }

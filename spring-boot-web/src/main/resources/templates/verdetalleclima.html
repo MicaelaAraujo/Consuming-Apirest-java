@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <title>Ver detalle del clima</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
 </head>
 <body>
 	<!--
@@ -18,7 +17,13 @@
 <p>Temperatura Celsius: <span th:text="${teamResponse.current.temp_c}"></span></p>
 <p>Temperatura Fahrenheit: <span th:text="${teamResponse.current.temp_f}"></span></p>
 -->
-<p>Region:<span th:text="${region}"></span></p>
-<h2>Resultados para la región: ${region}</h2>
+
+<p>Name:<span th:text="${clima.location.name}"></span></p>
+<p>Region:<span th:text="${clima.location.region}"></span></p>
+<p>Country:<span th:text="${clima.location.country}"></span></p>
+
+<p>Last updated:<span th:text="${clima.current.last_updated_epoch}"></span></p>
+<p>temp c:<span th:text="${clima.current.temp_c}"></span></p>
+
 </body>
 </html>
