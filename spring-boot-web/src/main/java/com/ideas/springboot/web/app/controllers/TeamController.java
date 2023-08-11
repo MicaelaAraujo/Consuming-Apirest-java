@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-//@RestController
+
 @Controller
 public class TeamController {
 
@@ -29,8 +29,6 @@ public class TeamController {
 
     @GetMapping("verdetalleclima")
     public String verdetalleclima(Map<String, Object> model) {
-    	
-      //  model.put("teamResponse", respuesta);
         return "verdetalleclima";
       }
     
@@ -42,8 +40,6 @@ public class TeamController {
     @PostMapping("/buscarclima")
     public String buscarclima(@RequestParam String region, Map<String, Object> model) {
     	TeamResponse respuesta = this.teamService.buscarClima(region); 
-   //     List<Team> equiposEnRegion = teamService.buscarPorRegion(region);
-      //  model.put("equiposEnRegion", equiposEnRegion);
     	model.put("clima", respuesta);
         return "verdetalleclima";
     }

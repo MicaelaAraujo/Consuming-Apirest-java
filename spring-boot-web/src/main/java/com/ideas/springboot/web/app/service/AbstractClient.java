@@ -6,7 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 public abstract class AbstractClient {
 
-    @Value("${worldcup.base-url}")
+    @Value("${clima.base-url}")
     protected String baseUrl;
 
     protected final  RestTemplate restTemplate;

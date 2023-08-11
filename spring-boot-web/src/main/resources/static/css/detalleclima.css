@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(192, 192, 192);
+  background: radial-gradient(circle, #000080, #808080);
   margin: 0;
   padding: 0;
   display: flex;
@@ -30,7 +30,22 @@ p {
 }
 
 .temperature {
-  font-size: 20px;
+  font-size: 19px;
   color: rgb(0, 0, 64);
   margin-top: 10px;
+}
+.back-button {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid #007bff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #007bff;
+  color: white;
 }

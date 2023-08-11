@@ -38,7 +38,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px; /* Agrega un espacio entre el h2 y el formulario */
+  margin-top: 20px;
 }
 
 label {

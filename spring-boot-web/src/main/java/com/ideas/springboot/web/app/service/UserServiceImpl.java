@@ -22,13 +22,10 @@ public class UserServiceImpl extends AbstractClient implements UserService {
     @Override
     public RegisteredUserResponse create(RegisterUserRequest user) {
         String uri = baseUrl + "/user";
-        //log.info("Going to create {}", user);
         ResponseEntity<RegisteredUserResponse> response = restTemplate.postForEntity(uri, user, RegisteredUserResponse.class);
         if (response.getStatusCode().is2xxSuccessful()) {
-          //  log.info("Successfully user creation: {}", response.getBody().getStatus());
             return response.getBody();
         }
-       // log.error("Error in user creation - httpStatus was: {}", response.getStatusCode());
         throw new RuntimeException("Error");
     }
 
@@ -36,13 +33,10 @@ public class UserServiceImpl extends AbstractClient implements UserService {
     public LoginResponse login(LoginRequest loginRequest) {
 
         String uri = baseUrl + "/user/login";
-        //log.info("Going to login {}", loginRequest);
         ResponseEntity<LoginResponse> response = restTemplate.postForEntity(uri, loginRequest, LoginResponse.class);
         if (response.getStatusCode().is2xxSuccessful()) {
-           // log.info("Successfully user creation: {}", response.getBody().getStatus());
             return response.getBody();
         }
-       // log.error("Error in user login - httpStatus was: {}", response.getStatusCode());
         throw new RuntimeException("Error");
 
     }

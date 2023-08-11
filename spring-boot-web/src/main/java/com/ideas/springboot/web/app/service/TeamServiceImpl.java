@@ -27,10 +27,9 @@ public class TeamServiceImpl extends AbstractClient implements TeamService {
                 uri, HttpMethod.GET, requestEntity , TeamResponse.class);
 
         if (respuesta.getStatusCode().is2xxSuccessful()) {
-        //    log.info("Successfully user creation: {}", response.getBody().getStatus());
             return respuesta.getBody();
         }
-        //log.error("Error in user creation - httpStatus was: {}", response.getStatusCode());
+       
         throw new RuntimeException("Error");
     }
 

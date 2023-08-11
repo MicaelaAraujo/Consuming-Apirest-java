@@ -1,9 +1,6 @@
 package com.ideas.springboot.web.app.service.dto.team;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import java.util.List;
 
 @Data
 public class TeamResponse {
@@ -11,7 +8,6 @@ public class TeamResponse {
 	 private LocationDTO location;
 	 private CurrentDTO current;
 
-	    // Agregar getters y setters para los campos
 
 	    public LocationDTO getLocation() {
 	        return location;
